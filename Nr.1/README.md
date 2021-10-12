@@ -1,2 +1,2 @@
-#First Script
+#First_Script
 Date: 12.10.21
