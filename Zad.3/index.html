@@ -8,8 +8,12 @@
 </head>
 <body>
     <script>
-        const rLen = prompt("Podaj długość trasy:"), fPrice = prompt("Podaj cenę za 1L paliwa:"),cUse = prompt("Podaj zużycie paliwa na 100 km");
+        const rLen = prompt("Podaj długość trasy(w km):"), fPrice = prompt("Podaj cenę za 1L paliwa:"),cUse = prompt("Podaj zużycie paliwa na 100 km");
         const cost = rLen*(cUse/100)*fPrice;
+        document.write(`<div> Długość trasy = ${rLen} km<div/>`);
+        document.write(`<div> Cena za 1L paliwa = ${fPrice} zł/L<div/>`);
+        document.write(`<div> Zużycie paliwa na 100km = ${cUse} L/100km<div/>`);
+        document.write(`<div> Całkowity wydatek na trasę = ${cost} zł<div/>`);    
     </script>
 </body>
 </html>
