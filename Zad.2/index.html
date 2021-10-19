@@ -9,8 +9,8 @@
 <body>
     <script>
         const r = prompt('Podaj promień okręgu:');
-        const obw = 2*3.14*r;
-        const pol = 3.14*Math.pow(r,2);
+        const obw = 2*Math.PI*r;
+        const pol = Math.PI*Math.pow(r,2);
         document.write(`<div> promień = ${r},<div/>`);
         document.write(`<div> obw = ${obw},<div/>`);
         document.write(`<div> pole = ${pol}<div/>`);  
