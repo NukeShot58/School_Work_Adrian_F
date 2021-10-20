@@ -8,13 +8,17 @@
 </head>
 <body>
     <script>
+        let max = 1
+        let word = "";
+        const x = 7
         const sym = prompt("Podaj jeden znak do wypisania:");
         for(let i = 0; i < 4;i++){
-            for(let j = 0; j < 7; j++){
-
+            document.write(`<div style="padding-left:${(x-max)/2}em;padding-right:${(x-max)/2}em">`);
+            for(let j = 0; j < max; j++){
+                document.write(`${sym}`);
             }
         }
-        document.write
+        
     </script>
 </body>
 </html>
