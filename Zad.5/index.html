@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //TODO: Napisz program pobierający od użytkownika trzy liczby i drukujący te liczby na ekranie w porządku rosnącym.
+        let tab = [];
+        for(let i = 0; i < 3; i++){
+            tab.push(prompt("Podja liczbę"));
+        }
+        tab.sort();
+        tab.forEach(num => {
+            document.writeln(num);
+        });
+
+    </script>
+</body>
+</html>
