@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /*TODO:Napisz prosty kalkulator. Po uruchomieniu program powinien pytać o rodzaj działania do wykonania. Wybór następuje poprzez wpisanie znaku:
+’+’ – dodawanie
+’–’ – odejmowanie
+’*’ – mnożenie
+’/’ – dzielenie
+Po wybraniu rodzaju działania, program wczytuje dwie liczby i wykonuje wybrane działanie. Na ekranie powinien wyświetlić się komunikat, jakie wybrano działanie, jakie liczby wczytano i jaki jest wynik.
+*/ 
+        const choice1 = prompt("Co chcesz zrobic?\n’+’ – dodawanie\n’–’ – odejmowanie\n’*’ – mnożenie\n’/’ – dzielenie\nPodaj jeden symbol:");
+        let a,b;
+        switch(choice1){
+            case "+":
+            document.writeln("Wybrałeś/aś dodawanie:");
+            a = prompt("Podaj pierwszy numer:")| 0;
+            b = prompt("Podaj drugi numer:") | 0;
+            document.writeln(`${a} + ${b} = ${a+b}`);
+            break;
+            case "-":
+            document.writeln("Wybrałeś/aś odejmowanie:");
+            a = prompt("Podaj pierwszy numer dla a - b:")| 0;
+            b = prompt(`Podaj drugi numerdla ${a} - b:`) | 0;
+            document.writeln(`${a} - ${b} = ${a-b}`);
+            break;
+            case "*":
+            document.writeln("Wybrałeś/aś mnożenie:");
+            a = prompt("Podaj pierwszy numer:")| 0;
+            b = prompt("Podaj drugi numer:") | 0;
+            document.writeln(`${a} * ${b} = ${a*b}`);
+            break;
+            case "/":
+            document.writeln("Wybrałeś/aś dzielenie:");
+            a = prompt("Podaj pierwszy numer dla a / b:")| 0;
+            b = prompt(`Podaj drugi numerdla ${a} / b:`) | 0;
+            document.writeln(`${a} / ${b} = ${a/b}`);
+            break;
+        }
+    </script>
+</body>
+</html>
