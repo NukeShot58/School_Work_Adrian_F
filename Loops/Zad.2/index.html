@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <input type="number" name="l1" placeholder="Podaj pierwszy numer przedziału"/>
+        <input type="number" name="l2" placeholder="Podaj ostatni numer przedziału"/>
+        <button type="submit">Wypisz</button>
+    </form>
+    <div class="liczby"></div>
+    
+    <script>
+        const form = document.querySelector('form');
+        const div = document.querySelector('.liczby');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const l1 = parseInt(document.querySelector('input[name="l1"]').value);
+            const l2 = parseInt(document.querySelector('input[name="l2"]').value);
+            let num = "";
+
+            for(let i = l1; i <= l2; i++){
+                if(i%5 == 0){
+                    num+= i + ", ";
+                }
+            }
+            div.textContent= `Liczby z przedziału od ${l1} do ${l2} podzielne przez 5 to: ${num}`;
+        });
+    </script>
+</body>
+</html>
