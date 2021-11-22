@@ -20,8 +20,19 @@
 
         form.addEventListener('submit', (e) => {
             e.preventDefault();
-            let a = parseInt(document.querySelector('Input[name="a"]'));
-        })
+            let a = parseInt(document.querySelector('Input[name ="a"]').value);
+            let b = parseInt(document.querySelector('Input[name ="b"]').value);
+            const temp2 = b, temp1 = a;
+
+            while(a != b){
+                if(a > b){
+                    a = a-b;
+                }else{
+                    b = b-a;
+                }
+            }
+            div.textContent = `NWD liczby ${temp1} oraz ${temp2} jest równy ${a}`;
+        });
     </script>
 </body>
 </html>
