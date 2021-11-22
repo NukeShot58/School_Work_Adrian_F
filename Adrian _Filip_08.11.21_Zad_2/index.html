@@ -4,10 +4,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
 </head>
 <style>
-    
+    tr, td {
+    border: 1px solid black;
+    height: 32px;
+}
 </style>
 <body>
     <table style="width:100%;">
@@ -18,15 +20,28 @@
     <tr>
         <td colspan="4" style="height: 32px;"></td>
     </tr>
-    <tr style="height: 32px;">
-        <td style="width: 55%;"></td>
-        <td style="width: 45%;"></td>
+    <tr>
+        <td  colspan="2" ></td>
+        <td  colspan="2"></td>
     </tr>
     <tr>
-        <td style="width: 25%;"></td>
+        <td colspan="1" style="width: 25%;"></td>
         <td colspan="2" style="width: 50%;"></td>
-        <td style="width: 25%;"></td>
+        <td colspan="1" style="width: 25%;"></td>
     </tr>
+    <tr>
+        <td colspan="4" style="height: 64px; bottom: 0px; vertical-align: bottom;">Tabela 2</td>
+    </tr>
+    <tr>
+        <td colspan="1" rowspan="4" style="height: 128px;"></td>
+        <td rowspan="1" style="height: 64px;"></td>
+        <td colspan="2" rowspan="1" style="height: 48px;"></td>
+    </tr>
+    <tr>
+        <td colspan="1" rowspan="2" style="height: 64px;"></td>
+        <td colspan="2"  style="height: 48px;"></td>
+    </tr>
+    <tr></tr>
     </table>
 </body>
 </html>
