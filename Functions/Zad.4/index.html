@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        <select name="choice">
+            <option value=1>Dodawanie</option>
+            <option value=2>Odejmowanie</option>
+            <option value=3>Mnożenie</option>
+            <option value=4>Dzielenie</option>
+        </select>
+        <input type="number" name="l1" placeholder="Podaj pierwszą liczbę">
+        <input type="number" name="l2" placeholder="Podaj drugą liczbę">
+        <button type="submit">Oblicz</button>
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const form = document.querySelector('form');
+        const div = document.querySelector('.wynik');
+
+        const sumuj = function(l1,l2){
+            return l1+l2;
+        }
+        const odejmij = function(l1,l2){
+            return l1-l2;
+        }
+        const mnoz = function(l1,l2){
+            return l1*l2;
+        }
+        const dziel = function(l1,l2){
+            return l1/l2;
+        }
+
+        form.addEventListener('submit', (e) =>{
+            e.preventDefault();
+
+            const choice = parseInt(document.querySelector('select[name="choice"]').value);
+            const l1 = parseInt(document.querySelector('input[name="l1"]').value);
+            const l2 = parseInt(document.querySelector('input[name="l2"]').value);
+
+            switch(choice){
+            case 1:
+            div.textContent = `Wynik dodawania liczb ${l1} z ${l2} jest równy ${sumuj(l1,l2)}`;
+            break;
+            case 2:
+            div.textContent = `Wynik odejmowania z liczby ${l1} liczby ${l2} jest równy ${odejmij(l1,l2)}`;
+            break;
+            case 3:
+            div.textContent = `Wynik mnożenia liczb ${l1} z ${l2} jest równy ${mnoz(l1,l2)}`;
+            break;
+            case 4:
+                div.textContent = `Wynik dzielenie liczb ${l1} przez ${l2} jest równy ${dziel(l1,l2)}`;
+            break;
+            }
+        });
+    </script>
+</body>
+</html>
