@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="POST">
+        <input type="number" name="l1" placeholder="Podaj pierwszą liczbę">
+        <input type="number" name="l2" placeholder="Podaj drugą liczbę">
+        <button type="submit">Dodaj</button>
+    </form>
+    <div class="wynik"></div>
+    <script>
+        const form = document.querySelector('form');
+        const div = document.querySelector('.wynik');
+
+        const sumuj = function(l1,l2){
+            return l1+l2;
+        }
+
+        form.addEventListener('submit', (e) =>{
+            e.preventDefault();
+
+            const l1 = parseInt(document.querySelector('input[name="l1"]').value);
+            const l2 = parseInt(document.querySelector('input[name="l2"]').value);
+
+            div.textContent = `Wynik ${l1} + ${l2} jest równy ${sumuj(l1,l2)}`;
+
+        });
+    </script>
+</body>
+</html>
