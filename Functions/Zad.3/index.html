@@ -16,13 +16,17 @@
     <script>
         const form = document.querySelector('form');
         const div = document.querySelector('.wynik');
+        const pot = function(l, pot){
+            const lc = l;
+            for(let i = 1; i < pot; i++){
+                l *= lc;
+            }
+            return l;
+        }
 
         const sumuj = function(l1,l2){
             let suma = l1+l2;
-            for(let i = 0; i < 2; i++){
-            suma *= l1+l2;
-            }
-            return suma;
+            return pot(suma, 3);
         }
 
         form.addEventListener('submit', (e) =>{
