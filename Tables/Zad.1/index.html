@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const writeArr = function(arr){
+            arr.forEach(num => {
+                document.write(`${num}, `);
+            });
+        }
+        //1. Utwórz pustą tablicę. Korzystając z pętli for wypełnij ją wartościami od 1 do 10 i wyświetl zawartość na ekranie.
+        // Następnie wymień zawartość tablicy, tak aby zawierała wartości od 100 do 90 i ponownie wyświetl zawartość tablicy.
+        let arr = [];
+        for (let i = 0; i < 10; i++) {
+            arr[i] = i+1;
+        }
+        writeArr(arr);
+        document.writeln(`<br>`);
+        for (let i = 0, j = 100; i < 11; i++,j--) {
+            arr[i] = j;
+        }
+        writeArr(arr);
+
+    </script>
+</body>
+</html>
