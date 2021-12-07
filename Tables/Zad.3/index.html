@@ -7,18 +7,56 @@
     <title>Document</title>
 </head>
 <body>
+    <form method="GET">
+        
+    </form>
+    <div class="tablica"></div>
+    <div class="suma"></div>
+    <div class="zera"></div>
+    <input type="number" placeholder="Podaj liczbe do znalezienia" name="l">
+        <button type="submit">Generuj</button>
+    <div class="liczby"></div>
     <script>
         function getRandomIntInclusive(min, max) {
             min = Math.ceil(min);
             max = Math.floor(max);
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        const liczby = [];
+       
+        const divTablica = document.querySelector('.tablica');
+        const divSuma = document.querySelector('.suma');
+        const divZera = document.querySelector('.zera');
+        const btn = document.querySelector('button');
+        const divLiczby = document.querySelector('.liczby');
+        const form = document.querySelector('form');
+            
+            const liczby = [];
+            let ileZer = 0;
+            let suma = 0;
+            let ilLicz = 0;
         for (let i = 0; i < 100; i++) {
             //liczby[i] = Math.round(Math.random() * 100);
             liczby[i] = getRandomIntInclusive(0, 100);
+            suma += liczby[i];
         }
-        document.write(`${liczby.join(", ")}`);
+
+        for (const liczba of liczby) {
+            if(liczba == 0) ileZer++;
+        }
+        
+        divTablica.textContent =  `${liczby.join(", ")}`
+        divSuma.textContent = 'Suma liczb w tabliecy jest równa: ' + suma;
+        divZera.textContent = 'Ilość zer w tabliecy jest równa: ' + ileZer;
+        btn.addEventListener('click', (e) => {
+            const l = parseInt(document.querySelector('input[name="l"]').value)
+            ilLicz = 0;
+            for (const liczba of liczby) {
+                if(liczba == l) ilLicz++;
+            }
+        divLiczby.textContent = `Ilość liczby ${l} w tej tabliecy jest równa: ` + ilLicz;
+        });
+        
+        
     </script>
 </body>
 </html>
