@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="GET">
+        <select name="choice">
+            <option value=0>Pole Trójkąta</option>
+            <option value=1>Obwód Trójkąta</option>
+        </select>
+        <input type="number" name="a" placeholder="Podaj bok a">
+        <input type="number" name="b" placeholder="Podaj bok b">
+        <button type="submit">Oblicz</button>
+    </form>
+    <div class="answer"></div>
+    <script>
+        const form = document.querySelector('form');
+        const div = document.querySelector('.answer');
+
+        const getPol = function (a, b) {
+            return Math.abs(a*b);
+        };
+        const getObw = function(a,b) {
+            return Math.abs(Math.sqrt(Math.abs(Math.pow(a,2))+Math.abs(Math.pow(b,2))) + Math.abs(a) + Math.abs(b));
+        };
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const choice = parseInt(document.querySelector('select[name="choice"]').value);
+            const a = parseInt(document.querySelector('input[name="a"]').value);
+            const b = parseInt(document.querySelector('input[name="b"]').value);
+
+            switch(choice){
+                case 0: 
+                div.textContent =  `Pole trójkąta jest równe ${getPol(a,b)}.`;
+                break;
+                case 1: 
+                div.textContent =  `Obwód trójkąta jest równy ${getObw(a,b)}.`;
+                break;
+            }
+        });
+    </script>
+</body>
+</html>
