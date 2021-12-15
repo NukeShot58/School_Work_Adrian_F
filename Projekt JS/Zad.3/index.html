@@ -26,7 +26,7 @@
             console.log(r);
             let answ = ``;
             let rtemp = r;
-            let vr;
+            let vr, r2;
             console.log(r % 5);
             if(r >= 5){
                 let x = 5;
@@ -34,7 +34,7 @@
                 answ+= `${(r-(r%x))/x} x 5zł,`;
                 if(vr >= 2){
                 x = 2;
-                let r2 = vr;
+                r2 = vr;
                 vr = vr%x;
                 answ+= `${(r2-(r2%x))/x} x 2zł,`;
                     if(vr >= 1){
@@ -43,13 +43,19 @@
                     vr = vr%x;
                     answ+= `${(r2-(r2%x))/x} x 1zł,`;
                     }
-                }
+                } else if(vr >= 1){
+                    x = 1;
+                    r2 = vr;
+                    vr = vr%x;
+                    answ+= `${(r2-(r2%x))/x} x 1zł,`;
+                    }
             }else if(r >= 2){
                 let x = 2;
                 vr = r%x;
                 answ+= `${(r-(r%x))/x} x 2zł,`;
                 if(vr >= 1){
                     x = 1;
+                    r2 = vr;
                     vr = vr%x;
                     answ+= `${(vr-(vr%x))/x} x 1zł,`;
                     }
