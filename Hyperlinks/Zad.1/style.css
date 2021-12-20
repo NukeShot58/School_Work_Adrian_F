@@ -1,5 +1,7 @@
 body {
     background-color: #4D4C4C;
+    color: #ffffff;
+    font-size: 17px;
 }
 .topbar{
     overflow: hidden;
