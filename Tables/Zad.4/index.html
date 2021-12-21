@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form method="get">
+        <input type="number" name="il" placeholder="Podaj ilosc liczb">
+        <button type="submit">Oblicz</button>
+    </form>
+    <div class="answ"></div>
+    <script>
+        const form = document.querySelector('form');
+        const div = document.querySelector('.answ');
+
+        function getRandomIntInclusive(min, max) {
+            min = Math.ceil(min);
+            max = Math.floor(max);
+            return Math.floor(Math.random() * (max - min + 1)) + min;
+        }
+
+        const getMin = function(arr, il){
+            let min = arr[0];
+            for(let i = 1;i < il;i++){
+                if(min > arr[i]){
+                    min = arr[i];
+                }
+            }
+            return min;
+        };
+
+        const getMax = function(arr, il){
+            let max = arr[0];
+            for(let i = 1;i < il;i++){
+                if(max < arr[i]){
+                    max = arr[i];
+                }
+            }
+            return max;
+        };
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+
+            const il = parseInt(document.querySelector('input[name="il"]').value);
+
+            let arr = [];
+            for(let i = 0; i < il; i++){
+                arr[i] = getRandomIntInclusive(0, 1000);
+            }
+            
+            div.textContent = `Najmniejsza liczba w tej tablicy to: ${getMin(arr, il)}, a największa to: ${getMax(arr, il)}.`
+
+            delete arr;
+        });
+    </script>
+</body>
+</html>
