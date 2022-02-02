@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input name="nameIpt" placeholder="Podaj imie">
+    <button type="submit">Sprawdz</button>
+    <div></div>
+
+    <script>
+        //Check name function
+        const countWords = function(s){
+            let wordArr = s.split(' ')
+            return wordArr.length;
+        };
+
+        // const name = document.querySelector('input[name="i"]');
+        const btn = document.querySelector('button');
+        const div = document.querySelector('div');
+        btn.addEventListener('click', () => {
+            const name = document.querySelector('input[name="nameIpt"]').value;
+            div.textContent = `To zdanie ma ${countWords(name)} słów.`;
+        })
+    </script>
+</body>
+</html>
