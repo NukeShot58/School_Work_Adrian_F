@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input name="word" placeholder="Podaj imie">
+    <button type="submit">Sprawdz</button>
+    <div></div>
+
+    <script>
+
+        const checkWord = function(w){
+            let s = 0;
+            for(let i = 0;i<w.length;i++){
+                switch(w.charAt(i)){
+                    case 'a':
+                    s++;
+                    break;
+                    case 'e':
+                    s++;
+                    break;
+                    case 'i':
+                    s++;
+                    break;
+                    case 'o':
+                    s++;
+                    break;
+                    case 'u':
+                    s++;
+                    break;
+                    case 'y':
+                    s++;
+                    break;
+                }
+            }
+            return s;
+        }
+
+        const btn = document.querySelector('button');
+        const div = document.querySelector('div')
+        btn.addEventListener('click', () =>{
+            const word = document.querySelector('input[name="word"]').value;
+            div.textContent = `W tym wyrazie jest ${checkWord(word)} samogłosek.`;
+        })
+    </script>
+</body>
+</html>
