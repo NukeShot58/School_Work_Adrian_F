@@ -7,7 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    <div></div>
     <script src="Samochod.js"></script>
+    <script src="Komis.js"></script>
     <script>
         const printS = function(sam){
             console.log(sam);
@@ -20,6 +22,16 @@
         printS(kia);
         const abc = new Samochod('abc','xyz',90000,2000,7);
         printS(abc);
+
+        const asso = new Komis('asso');
+        console.log(asso);
+        asso.dodajSamochod(audi);
+        asso.dodajSamochod(kia);
+        asso.dodajSamochod(abc);
+        asso.usunSamochod(1);
+        console.log(asso);
+        asso.wyswietlSamochod();
+
     </script>
 </body>
 </html>
