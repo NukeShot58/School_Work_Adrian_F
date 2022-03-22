@@ -5,7 +5,7 @@ class Book{
     contacts = [];
     showContacts(){
         const div = document.querySelector('div');
-        this.contacts.forEach(element => {
+        for(let i = 0; i < this.contacts.length)
             div.innerHTML += `<p>: ${element.marka} <p/>`;
             div.innerHTML += `<p>Imie: ${element.imie} <p/>`;
             div.innerHTML += `<p>Numer: ${element.numer} <p/>`;
