@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label>a.</label>
+            <input type="checkbox" name="a" value="a">
+        </div>
+        <div>
+            <label>b.</label>
+            <input type="checkbox" name="b" value="b">
+        </div>
+        <div>
+            <label>c.</label>
+            <input type="checkbox" name="c" value="c">
+        </div>
+        <div>
+            <label>d.</label>
+            <input type="checkbox" name="d" value="d">
+        </div>
+        <button type="submit">Sprawdź</button>
+    </form>
+    <div class="answ"></div>
+    <script>
+        const form = document.querySelector('form');
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const inp = document.querySelectorAll('input[type="checkbox"]')
+            const div = document.querySelector('.answ')
+            let answ = "";
+            inp.forEach(i => {
+                if(i.checked){
+                    answ += i.value + ", ";
+                }
+            })
+            div.textContent="Wybrałeś/aś: " + answ;
+
+
+        })
+    </script>
+</body>
+</html>
