@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        div {
+            display: flex;
+            justify-content: space-between;
+            width: 350px;
+            padding-bottom: 10px;
+        }
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div><label for="red">Podaj kolor czerwony:</label>
+            <input type="number" name="red">
+        </div>
+        <span class="error"></span>
+        <div><label for="green">Podaj kolor zielony:</label>
+            <input type="number" name="green">
+        </div>
+        <span class="error"></span>
+        <div>
+            <label for="red">Podaj kolor niebieski:</label>
+            <input type="number" name="blue">
+        </div>
+        <span class="error"></span>
+        <div><button type="submit">Zmień kolor</button></div>
+        
+    </form>
+
+    <script>
+        const form = document.querySelector('form');
+
+        
+
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const label = document.querySelectorAll('label');
+            const r = parseInt(document.querySelector('input[name="red"]').value || 0) ;
+            const g = parseInt(document.querySelector('input[name="green"]').value || 0) ;
+            const b = parseInt(document.querySelector('input[name="blue"]').value || 0);
+            const err = document.querySelectorAll('span.error');
+            const checkNum = (a) => {
+                if(a < 0 || a > 255){
+                    return false;
+                }
+                return true;
+            }
+            if(!checkNum(r) || !checkNum(g) || !checkNum(b)){
+                err.forEach((er) => {
+                    er.textContent="";
+                })
+                if(!checkNum(r)){
+                    err[0].textContent="Niepoprawna liczba, liczba nie może być większa od 255 lub mniejsza od 0!!!";
+                }
+                if(!checkNum(g)){
+                    err[1].textContent="Niepoprawna liczba, liczba nie może być większa od 255 lub mniejsza od 0!!!";
+                }
+                if(!checkNum(b)){
+                    err[2].textContent="Niepoprawna liczba, liczba nie może być większa od 255 lub mniejsza od 0!!!";
+                }
+            }else{
+                for(let i = 0; i < err.length;i++){
+                    err[i].textContent="";
+                }
+                document.body.style.backgroundColor=`rgb(${r},${g},${b})`;
+                if(document.body.style.backgroundColor==`rgb(0, 0, 0)`){
+                    for(let i = 0; i < label.length;i++){
+                        label[i].style.color='white';
+                    }
+                }else{
+                    for(let i = 0; i < label.length;i++){
+                        label[i].style.color='black';
+                    }
+                }
+            }
+            
+
+        })
+    </script>
+</body>
+</html>
