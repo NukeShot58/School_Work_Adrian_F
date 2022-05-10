@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <div>
+            <label>Podaj pierwszy bok:</label>
+            <input type="number" name="l1">
+        </div>
+        <div>
+            <label>Podaj drugi bok:</label>
+            <input type="number" name="l2">
+        </div>
+        <button type="submit">Oblicz</button>
+    </form>
+    <div>Pole: </div>
+    <div>Obwód: </div>
+    <div style="color: red;"></div>
+    <script>
+        const form = document.querySelector('form');
+        const div = document.querySelectorAll('div');
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            let l1 = parseInt(document.querySelector('input[name="l1"]').value);
+            let l2 = parseInt(document.querySelector('input[name="l2"]').value);
+            if(l1 <= 0 || l2 <= 0){
+                div[4].textContent = "bok nie może byc mniejsz lub równy 0";
+            }else {
+                div[4].textContent = "";
+                let obw = 2* l2 + 2* l1;
+                let pol = l1 *l2;
+                div[2].textContent = `Pole: ${pol}`;
+                div[3].textContent = `Obwód: ${obw}`;
+            }
+            
+        })
+    </script>
+</body>
+</html>

@@ -5,27 +5,48 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .d{
+            visibility: hidden;
+        }
+    </style>
 </head>
 <body>
     <form>
         <label>Obliczasz pole i obwód:</label>
         <select>
             <option value="0">kwadrat</option>
-            <option value="1">prostokąt</option>
-            <option value="2">okrąg</option>
+            <option value="1">okrąg</option>
+            <option value="2">prostokąt</option>
         </select>
         <br>
         <label>Podaj liczbe do obliczenia(promień dla koła):</label>
         <input type="number">
-        <br>
-        <label>Podaj liczbe do obliczenia:</label>
-        <input type="number">
-        <br>
-        <button type="submit">Oblicz</button>
+        <div class="d"><label>Podaj liczbe do obliczenia(nie ważne dla koła i kwadratu):</label>
+            <input type="number">
+        </div>
+        <div><button type="submit">Oblicz</button></div>
+        
     </form>
     
     <script>
         const form = document.querySelector('form');
+        const hd = document.querySelector('.d');
+        const sel = document.querySelector('select');
+        sel.addEventListener('change', e => {
+            e.preventDefault();
+            let selv = sel.value;
+            switch(selv){
+                case "0":
+                case "1":
+                hd.sty
+                break;
+                case "2":
+
+                break;
+            }
+        })
+
         form.addEventListener('submit', (e) => {
             e.preventDefault();
             
