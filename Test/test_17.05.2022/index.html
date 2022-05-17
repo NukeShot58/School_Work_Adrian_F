@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .err{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <form>
+        <div><label>Podaj ilość kul:</label><input type="number" name="il"></div>
+        <div class="err"></div>
+        <div><label>Podaj minimalną liczbę:</label><input type="number" name="min"></div>
+        <div><label>Podaj maxymalną liczbę:</label><input type="number" name="max"></div>
+        <div class="err"></div>
+        <br>
+        
+        <button type="submit">Losuj!</button>
+    </form>
+    <div class="ans"></div>
+    <script>
+        const getRand = (a,b) => {
+           return Math.floor(Math.random(0)*(b+1-a))+a;
+        }
+        const div = document.querySelector('div.ans');
+        const form = document.querySelector('form');
+        const err = document.querySelectorAll('div.err');
+        form.addEventListener('submit', e =>{
+            e.preventDefault();
+            let il = parseInt(document.querySelector('input[name="il"]').value);
+            if(il > 0){
+                err[0].textContent = "";
+                //console.log(il);
+                //console.log("a");
+                const odp = [];
+                let min = parseInt(document.querySelector('input[name="min"]').value);
+                let max = parseInt(document.querySelector('input[name="max"]').value);
+                if(max - il < min-1){
+                    err[0].textContent = "Ilość unikatowych liczb do wylosowania nie może być mniejsza od ilości liczb. Zmniejsz ilość liczb/powiększ max lub zmniejsz min";
+                }else if(min < max){
+                    err[0].textContent = "";
+                    err[1].textContent = "";
+
+                    for(let i = 0; i < il;){
+                        let aInOdp = false;
+                       let a = getRand(min,max);
+                       if(i > 0){
+                        for(let j = 0; j < odp.length;j++){
+                            console.log("for for");
+                        if(odp[j] == a){
+                            console.log("for for if");
+                            aInOdp = true;
+                            break;
+                            
+                        }
+                       }
+                       }
+                       console.log('for');
+                       if(aInOdp == false){
+                            i++;
+                            console.log("iInOpd T");
+                            odp.push(a);
+                        }
+                    }
+                    div.textContent = `${odp.join()}`;
+                }else{
+                    err[1].textContent = "Min musi być mniejsze od max";
+                }
+            }else{
+                err[0].textContent = "Ilość nie może być mniejsza od 1"
+                
+            }
+            
+        })
+    </script>
+</body>
+</html>
