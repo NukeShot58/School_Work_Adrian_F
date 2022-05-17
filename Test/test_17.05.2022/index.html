@@ -41,7 +41,7 @@
                 let min = parseInt(document.querySelector('input[name="min"]').value);
                 let max = parseInt(document.querySelector('input[name="max"]').value);
                 if(max - il < min-1){
-                    err[0].textContent = "Ilość unikatowych liczb do wylosowania nie może być mniejsza od ilości liczb. Zmniejsz ilość liczb/powiększ max lub zmniejsz min";
+                    err[0].textContent = "Ilość unikatowych liczb do wylosowania nie może być mniejsza od ilości kul. Zmniejsz ilość liczb/powiększ max lub zmniejsz min";
                 }else if(min < max){
                     err[0].textContent = "";
                     err[1].textContent = "";
@@ -51,19 +51,19 @@
                        let a = getRand(min,max);
                        if(i > 0){
                         for(let j = 0; j < odp.length;j++){
-                            console.log("for for");
+                            //console.log("for for"); //debug code
                         if(odp[j] == a){
-                            console.log("for for if");
+                            //console.log("for for if"); //debug code
                             aInOdp = true;
                             break;
                             
                         }
                        }
                        }
-                       console.log('for');
+                       //console.log('for'); //debug code
                        if(aInOdp == false){
                             i++;
-                            console.log("iInOpd T");
+                            //console.log("iInOpd T"); //debug code
                             odp.push(a);
                         }
                     }
