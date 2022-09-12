@@ -1,0 +1,26 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    padding: 20px;
+}
+ul{
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    border: 2px solid black;
+}
+ul li a{
+    display: block;
+    text-decoration: none;
+    background-color: aqua;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 10px;
+    border: 2px solid pink;
+    transition: 0.5s;
+}
+ul li a:hover{
+    background-color: green;
+}
