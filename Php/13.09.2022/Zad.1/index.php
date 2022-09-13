@@ -8,5 +8,11 @@
 </head>
 <body>
     
+    <?php 
+    echo('Text <br>');
+    $liczba = 10;
+    echo($liczba . '<br>');
+    echo("Liczba ma wartość: $liczba")
+    ?>
 </body>
 </html>
