@@ -1,0 +1,41 @@
+*{
+    margin: 0;
+    padding: 0;
+    color:white;
+}
+.header{
+    background-color: aqua;
+    height: 2rem;
+}
+.main{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.hero{
+    background-color: red;
+    width: 60%;
+    height: 150px;
+}
+.content{
+    background-color: green;
+    width:60%;
+    margin-right: 5px;
+}
+.sidebar{
+    background-color: purple;
+    width: 40%;
+}
+.footer{
+    background-color: grey;
+    height: 2rem;
+}
+.container{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+    height: 400px;
+}
