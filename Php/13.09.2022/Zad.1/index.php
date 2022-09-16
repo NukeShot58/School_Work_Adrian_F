@@ -14,5 +14,6 @@
     echo($liczba . '<br>');
     echo("Liczba ma wartość: $liczba")
     ?>
+    
 </body>
 </html>
