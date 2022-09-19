@@ -7,13 +7,17 @@
     <title>Document</title>
 </head>
 <body>
+    <?php
+    $a = 120;
+    $b = 300; 
     
-    <?php 
-    echo('Text <br>');
-    $liczba = 10;
-    echo($liczba . '<br>');
-    echo("Liczba ma wartość: $liczba")
+    while($b != 0){
+       $c = $a % $b;
+       $a = $b;
+       $b = $c; 
+    }
+
+    echo $a;
     ?>
-    
 </body>
 </html>

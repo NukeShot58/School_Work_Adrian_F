@@ -75,6 +75,7 @@
         break;
     }
     echo $text;
+
     ?>
 </body>
 </html>

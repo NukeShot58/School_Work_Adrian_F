@@ -7,13 +7,14 @@
     <title>Document</title>
 </head>
 <body>
-    
     <?php 
-    echo('Text <br>');
-    $liczba = 10;
-    echo($liczba . '<br>');
-    echo("Liczba ma wartość: $liczba")
+    $from = 5;
+    $to = 27;
+    for($i = 1; $i < ($to - $from + 1); $i++){
+        if(($from + ($i - 1)) % 5 == 0 ){
+            echo ($from + ($i - 1)) . ", ";
+        }
+    }
     ?>
-    
 </body>
 </html>

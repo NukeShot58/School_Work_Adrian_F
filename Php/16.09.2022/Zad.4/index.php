@@ -7,13 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    
     <?php 
-    echo('Text <br>');
-    $liczba = 10;
-    echo($liczba . '<br>');
-    echo("Liczba ma wartość: $liczba")
+    $n = 10;
+    $silnia = 1;
+    for($i = 1; $i <= $n; $i++){
+        $silnia *= $i;
+    }
+    echo 'Silnia jest równa: ' . $silnia;
     ?>
-    
 </body>
 </html>
