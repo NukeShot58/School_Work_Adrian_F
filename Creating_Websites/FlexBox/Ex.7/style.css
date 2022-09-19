@@ -1,0 +1,17 @@
+*{
+    padding: 10px;
+    
+}
+
+ul{
+    border: 1px solid black;
+    display: flex;
+}
+ul li{
+    border: 1px solid blue;
+    border-radius: 5px;
+    background-color: cyan;
+    list-style: none;
+    width: 33%;
+    
+}
