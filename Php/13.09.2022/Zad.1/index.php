@@ -12,7 +12,7 @@
     echo('Text <br>');
     $liczba = 10;
     echo($liczba . '<br>');
-    echo("Liczba ma wartość: $liczba")
+    echo("Liczba ma wartość: $liczba");
     ?>
     
 </body>
