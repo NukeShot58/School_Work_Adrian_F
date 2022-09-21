@@ -1,0 +1,21 @@
+body{
+    padding: 50px;
+}
+.rodzic{
+    position: fixed;
+    width: 400px;
+    height: 300px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: orange;
+    z-index: -1;
+}
+.dziecko{
+background-color: blue;
+position: absolute;
+width: 100px;
+height: 100px;
+top: 100px;
+left: 50px;
+}
