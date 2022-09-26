@@ -1,3 +1,4 @@
+
 .sciana{
     position:absolute;
     min-height: 500px;
@@ -13,6 +14,7 @@
     background-color: black;
     left: 50px;
     top: 100px;
+    border: 4px solid brown;
 }
 .okno2{
     position: absolute;
@@ -21,6 +23,7 @@
     background-color: black;
     left: 350px;
     top: 100px;
+    border: 4px solid brown;
 }
 .drzwi{
     position: absolute;
