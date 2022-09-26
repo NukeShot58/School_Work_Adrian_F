@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Bungee+Spice&display=swap');
+*{
+    margin: 0 auto;
+    padding: 0;
+}
+
+body{
+    background-color: skyblue;
+}
+
+img{
+    height: auto;
+    width: auto;
+    max-width: 400px;
+}
+.clouds{
+    display: flex;
+}
+.header{
+    display: flex;
+    min-width: 100%;
+    justify-content: center;
+    height: auto;
+}
+.header h1{
+    display: flex;
+    align-items: center;
+    color: red;
+    font-family: 'bungee spice', Arial, Helvetica, sans-serif;
+}
+.trawa{
+    position: absolute;
+    background-color: greenyellow;
+    min-width: 100%;
+    min-height: 150px;
+    bottom: 0px;
+}
+.sun{
+    position: absolute;
+    z-index: -1;
+    right: 0px;
+    top: 0px;
+}
+.sheep{
+    position: absolute;
+    top: -75px;
+    left: 50px;
+    max-width: 200px;
+}
+.tree{
+    position: absolute;
+    top: -100px;
+    right: 50px;
+    
+}
