@@ -1,8 +1,10 @@
 <?php
-    if(!isset($_SESSION['user_login'])){
+     session_start();
+     if(!isset($_SESSION['zalogowany']) || !$_SESSION['zalogowany']){
         header('Location: loguj.php');
+        exit();
     } 
-    session_start();
+    
     ?>
 <!DOCTYPE html>
 <html lang="en">
