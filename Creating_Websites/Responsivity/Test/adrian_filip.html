@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+    margin: 0;
+    padding: 0;
+    
+}
+img{
+    max-width: 1fr;
+    height: auto;
+}
+.header{
+display: flex;
+justify-content: space-between;
+align-items: center;
+
+}
+.header img{
+    max-height: 150px;
+
+    margin: 0 10px;
+} 
+.nav{
+    height: 100%;
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+.nav ul{
+    display: flex;
+}
+.nav ul li{
+    text-decoration: none;
+    list-style: none;
+}
+.nav ul li a{
+    text-decoration: none;
+    padding: 10px;
+    color: black;
+}
+.nav ul li:not(:last-child){
+    border-right: 2px black solid;
+}
+.con{
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.u{
+    height: 300px;
+    width: 300px;
+    border-top: 2px solid black ;
+    margin: 0 10px;
+}
+.u h1{
+    margin-top: 0px;
+    text-align: center;
+    background-color: gray;
+}
+.btnCon{
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+}
+.btnCon a{
+    padding: 10px;
+    border: 2px solid black;
+    text-decoration: none;
+    color: black;
+}
+.headImg{
+    position: relative;
+    width: 1fr;
+    height: 300px;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
+
+.headImg img{
+    
+    max-height: 300px;
+}
+.headImg h1{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.bannerAd{
+    display: flex;
+    justify-content: center;
+}
+.bannerAd img{
+    max-width: 468px;
+}
+.footer{
+    padding-left: 10px;
+    padding-right: 10px;
+    width: 1fr;
+    height: 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 2px solid black;
+}
+.men{
+    display: none;
+}
+
+@media (max-width:600px){
+    .con{
+        flex-direction: column;
+    }
+    .nav ul li:not(:last-child){
+        display: none;
+    } 
+    .men{
+        display: block;
+        padding: 10px;
+        border: 2px solid black;
+    }
+    .nav.responsive {position: relative;}
+    
+    .nav.responsive ul li{
+      float: none;
+      display: block;
+      text-align: left;
+    }
+    .nav.responsive ul{
+      
+      display: block;
+    }
+}   
+    </style>
+</head>
+<body>
+    <header class="header">
+        <img src="https://cdn.pixabay.com/photo/2016/12/26/18/33/logo-1932539_960_720.png" alt="">
+        <nav class="nav" id="nav">
+            <ul>
+                <li><a href="#">Link 1</a></li>
+                <li><a href="#">Link 2</a></li>
+                <li><a href="#">Link 3</a></li>
+                <li><a href="#">Link 4</a></li>
+                <li  class="men"><a href="javascript:void(0);" onclick="menOp()">Menu</a></li>
+            </ul>
+        </nav>
+    </header>
+    <section class="headImg">
+        <img src="https://cdn.pixabay.com/photo/2016/07/29/10/45/graphic-1552416_960_720.png" alt="">
+        <h1>Witaj na stronie!</h1>
+    </section>
+    <section class="bannerAd">
+        <img src="https://cdn.pixabay.com/photo/2016/06/01/20/02/ice-1429596_960_720.png" alt=""></section>
+    <section class="con">
+        <div class="u">
+            <h1>Usługa1</h1>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odit facere quod error illum fugit ipsa quam aperiam necessitatibus itaque dicta tenetur nisi mollitia eveniet eum odio iste cumque, quisquam quis.</div>
+            <div class="btnCon"><a href="">Zobacz więcej</a></div>
+        </div>
+        <div class="u">
+            <h1>Usługa2</h1>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero corrupti quam distinctio sapiente! Eos, enim architecto, repellat ut rerum nostrum quae impedit minima temporibus vero id beatae! Necessitatibus, non nam.</div>
+            <div class="btnCon"><a href="">Zobacz więcej</a></div>
+        </div>
+        <div class="u">
+            <h1>Usługa3</h1>
+            <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde ab atque alias! Ipsam debitis ut doloribus dolore deserunt dolores odio? Perferendis et iure culpa soluta! Sit similique voluptatem at impedit.</div>
+            <div class="btnCon"><a href="">Zobacz więcej</a></div>
+        </div>
+    </section>
+    
+    <section class="cont">
+        <h1>Skontaktuj się z nami</h1>
+        <section class="subcon">
+        <div>Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic pariatur facilis officia odio quaerat non illum alias rem et nostrum, in libero ullam commodi vitae reiciendis ipsam molestiae, debitis fugiat? Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius asperiores sit unde quas vitae! Dolor quod sequi a fugiat nemo iste deleniti fuga id, error ipsam laborum nam quam dolore.</div>
+        <form>
+
+        </form>
+        </section>
+    </section>
+    <footer class="footer"><div>Dane kontaktowe(wpisz swoje imie i nazwisko)</div></footer>
+    <script>
+        function menOp() {
+        var x = document.getElementById("nav");
+        if (x.className === "nav") {
+            x.className += " responsive";
+        } else {
+            x.className = "nav";
+        }
+        }
+    </script>
+</body>
+</html>
