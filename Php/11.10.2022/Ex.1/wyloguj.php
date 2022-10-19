@@ -1,3 +1,11 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['zalogowany']) || !$_SESSION['zalogowany']){
+        header('Location: loguj.php');
+        exit();
+    } 
+    
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,8 +15,7 @@
     <title>Document</title>
 </head>
 <body>
-<?php 
-    session_start();
+<?php
     unset($_SESSION['user_login']);
     session_destroy();
 

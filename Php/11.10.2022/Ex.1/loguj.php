@@ -24,6 +24,7 @@
         }else
         {
             $_SESSION['user_login'] = $_POST['login'];
+            $_SESSION['zalogowany'] = TRUE;
             header('Location: strona.php');
         }
     }
