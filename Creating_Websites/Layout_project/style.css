@@ -114,9 +114,9 @@ body{
     padding-right: 0px;
     padding-left: 60px;
 }
-.img-proj{
+/* .img-proj{
     height: 300px;
-}
+} */
 .item-proj:nth-of-type(even) .content-proj p{
     padding: 50px 60px 80px 0px;
 }
@@ -130,8 +130,132 @@ body{
     padding: 20px 0;
     text-align: center;
 }
+.motto{
+    background-image: url("./images/motto.jpg");
+    background-position: center;
+    background-attachment:fixed ;
+    background-size: cover;
+    padding: 50px 0;
+    text-align: center;
+}
 
+.motto-wrapper{
+    background-color: rgba(0, 63,144,0.5);
+    color: white;
+    padding:  50px 0;
+}
 
+.motto-wrapper h2{
+    text-transform: uppercase;
+    font-size: 3.75rem;
+    padding: 80px;
+}
+
+.my-motto{
+    width: 50vw;
+    margin: 0 auto;
+    font-size: 2.625rem;
+}
+
+.author{
+    font-size: 1.5rem;
+    padding-top: 20px;
+}
+
+.hobby{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.hobby h2{
+    flex-basis: 100%;
+    font-size: 2.625rem;
+    text-align: center;
+    text-transform: uppercase;
+    padding: 40px 0;
+}
+
+.hobby-item{
+    /* display: flex; */
+    flex-basis: 50%;
+    height: 300px;
+    background-position: center;
+    background-size: 100%;
+    /* justify-content: center;
+    align-items: center; */
+}
+
+.hobby-item:nth-of-type(1){
+    background-image: url("./images/hobby1.jpg");
+}
+.hobby-item:nth-of-type(2){
+    background-image: url("./images/hobby2.jpg");
+}
+.hobby-item:nth-of-type(3){
+    background-image: url("./images/hobby3.jpg");
+}
+.hobby-item:nth-of-type(4){
+    background-image: url("./images/hobby4.jpg");
+}
+
+.hobby-item p{
+    color: #fff;
+    font-size: 2.625rem;
+    opacity: 0;
+    transition: 0.5s;
+    line-height: 300px;
+    text-align: center;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.hobby-item:hover p{
+    
+    opacity: 1;
+}
+
+.hobby-item:hover{
+    background-size: 120%;
+    transition: 0.5s;
+}
+
+.kon_main{
+    display: flex;
+    background-color: #111;
+    align-items: center;
+    flex-direction: column;
+}
+.kon_main h2{
+    padding: 40px;
+    font-size: 40px;
+    color: #fff;
+    text-transform: uppercase;
+}
+
+.kontakt{
+    flex-basis: 50%;
+    display: flex;
+    
+}
+.kon_form{
+    flex-basis: 50%;
+}
+.kon_form form{
+    display: flex;
+    flex-direction: column;
+    flex-basis: 50%;
+}
+.kon_form form input{
+    margin: 10px;
+    font-size: 24px;
+}
+.kon_form form textarea{
+    margin: 10px;
+    font-size: 24px;
+}
+.kon_form form button{
+    font-size: 24px;
+    margin: 10px;
+}
 @media(max-width: 600px)
 {
     .container{
@@ -249,5 +373,31 @@ body{
         font-size: 1.5rem;
     }
     
+    .motto-wrapper h2{
+        font-size: 2.5rem;
+        padding-bottom: 60px;
+    }
+    .my-motto{
+        width: 100vw;
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+    .author{
+        font-size: 1.125rem;
+    }
+
+    .hobby-item{
+        flex-basis: 100%;
+       background-size: cover;
+    }
+    .hobby-item p{
     
+    opacity: 1;
+    height: 60px;
+    line-height: 60px;
+    }
+
+    .hobby-item:hover{
+        background-size: cover;
+    }
 }
