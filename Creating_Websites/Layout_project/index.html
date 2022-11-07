@@ -10,6 +10,25 @@
     <title>Moja strona</title>
 </head>
 <body>
+    <nav class="menu">
+        <div class="container">
+            <button class="show" id="open">Menu</button>
+            <span class="close" id="close">X</span>
+            <ul class="main-menu mm-mobile">
+                <li><a href="#">Start</a></li>
+                <li class="has-sub-menu hsm-mobile"><a href="#">O mnie</a>
+                <ul class="sub-menu sm-mobile">
+                    <li><a href="">Opcja 1</a></li>
+                    <li><a href="">Opcja 2</a></li>
+                    <li><a href="">Opcja 3</a></li>
+                </ul>
+                </li>
+                <li><a href="#">Projekty</a></li>
+                <li><a href="#">Hobby</a></li>
+                <li><a href="#">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
     <header class="header">
         <div class="container">
             <div class="header-wrap">
@@ -129,5 +148,7 @@
     <footer class="footer">
         <p>&copy 2022 Adrian Filip</p>
     </footer>
+
+    <script src="menu.js"></script>
 </body>
 </html>

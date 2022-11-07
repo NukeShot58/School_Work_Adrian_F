@@ -256,6 +256,113 @@ body{
     font-size: 24px;
     margin: 10px;
 }
+
+/* Menu top */
+
+.menu{
+    background-color: #1e1e1e;
+}
+
+.menu .main-menu{
+    display: flex;
+    list-style: none;
+    justify-content: flex-end;
+}
+.menu .main-menu li a{
+    display: block;
+    color: white;
+    text-decoration: none;
+    text-transform: uppercase;
+    font-size: 24px;
+    padding: 10px;
+    transition: 0.5s;
+}
+.menu .main-menu li a:hover{
+    color: yellowgreen;
+}
+
+li.has-sub-menu{
+    position: relative;
+}
+
+.sub-menu{
+    position: absolute;
+    opacity: 0;
+    visibility: hidden;
+    top: 100%;
+    left: 20px;
+    z-index: 10;
+    pointer-events: none;
+    list-style: none;
+    transition: 0.5s;
+}
+li.has-sub-menu:hover .sub-menu{
+opacity: 1;
+visibility: visible;
+pointer-events: auto;
+background-color: #1e1e1e;
+}
+
+li.has-sub-menu:hover .sub-menu a:hover{
+    transform:translateX(5px);
+}
+.menu button{
+    display: none;
+}
+
+.menu .close{
+    display: none;
+}
+@media (max-width: 600px) {
+    .menu .main-menu{
+        display: none;
+    }
+    .menu {
+        padding: 10px 0;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    .menu button{
+        /* display: none; */
+        background-color: #1e1e1e;
+        border: 2px solid white;
+        color: white;
+        font-size: 1.125rem;
+        text-transform: uppercase;
+        padding: 10px;
+        margin:0 10px;
+    }
+    .mm-mobile{
+        /* display: block; */
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        z-index: 11;
+        background-color: #1e1e1e;
+        padding-top: 100px;
+        padding-left: 50px;
+    }
+    .menu .close{
+        /* display: block; */
+        color: white;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 12;
+        font-size: 3.125rem;
+        background-color: transparent;
+        padding: 10px;
+    }
+
+    .show{
+        display: block !important;
+    }
+   
+}
+
 @media(max-width: 600px)
 {
     .container{
@@ -391,7 +498,6 @@ body{
        background-size: cover;
     }
     .hobby-item p{
-    
     opacity: 1;
     height: 60px;
     line-height: 60px;
@@ -400,4 +506,5 @@ body{
     .hobby-item:hover{
         background-size: cover;
     }
+    
 }
