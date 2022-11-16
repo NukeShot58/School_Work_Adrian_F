@@ -1,0 +1,67 @@
+body{
+    background-color: #f6e5dc;
+    font-family: Verdana, sans-serif;
+}
+
+.banner{
+    background-color: #2f180c;
+    text-align: center;
+    color: khaki;
+    height: 60px;
+}
+
+main{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lewy{
+    flex-basis: 60%;
+}
+
+.prawy{
+    font-size: 150%;
+    padding: 70px;
+}
+
+img{
+    height: 350px;
+}
+
+.dolny{
+    background-color: #d0b6a8;
+    text-align: center;
+    padding: 30px;
+    width: 100%;
+}
+
+.dolny label{
+    display: block ;
+}
+
+.dolny input{
+    display: block;
+    margin: auto;
+}
+
+.dolny input[name="daneOs"]{
+    display: inline;
+}
+
+.dolny .btn{
+    margin: 10px;
+    padding: 10px;
+    background-color: #2f180c;
+    color: khaki;
+}
+
+.dolny .btnC{
+    display: flex;
+    justify-content: center;
+}
+.stopka{
+    color: khaki;
+    background-color: #2f180c;
+    height: 60px;
+    
+}
