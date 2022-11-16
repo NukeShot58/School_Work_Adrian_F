@@ -46,20 +46,27 @@ $pass = $conn->real_escape_string($pass);
 $sql="SELECT login FROM users where login = '$login'";
 $result = $conn->query($sql);
 if($result->num_rows != 1){
+
+
     $_SESSION['error'] = 'Błędny login!';
     header("Location: index.php");
     exit();
+
+
 }else{
-    $sql="SELECT login FROM users where login = '$login' and haslo = '$pass'";
-    $rekord = $conn->query($sql);
-    if($rekord->num_rows == 1){
+    $sql="SELECT haslo FROM users where login = '$login'";
+    $result = $conn->query($sql);
+    $rekord = $result->fetch_assoc();
+    
+    if(password_verify($pass, $rekord['haslo'])){
     $_SESSION['user'] = $login;
     header("Location: serwis.php");
     }else{
     $_SESSION['error'] = 'Błędne hasło!';
     header("Location: index.php");
     exit();
-    }
+    }   
 }
+$conn->close();
 
 ?>

@@ -1,6 +1,13 @@
 <?php 
 session_start();
 ?>
+
+<?php 
+if(!isset($_SESSION['user'])){
+    header('Location: index.php');
+    exit();
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -23,8 +30,20 @@ session_start();
 <body>
     <h2>Witaj w naszym serwisie! Życzymy miłej pracy</h2>
     <p>Jesteś zalogowany jako: <?php echo $_SESSION['user'];
-    unset($_SESSION['user']);
+    //unset($_SESSION['user']);
     ?> </p>
     <a href="wyloguj.php">Wyloguj</a>
+
+    <h2>Wybierz operacje do wykonania</h2>
+    <form action="" method="post">
+        <input type="submit" value="Pokaż użytkowników" name="show">
+    </form>
+    <?php
+        if(isset($_POST["show"])){
+            require_once('funkcje.php');
+
+            show_users();
+        }
+    ?>
 </body>
 </html>

@@ -57,7 +57,7 @@ session_start();
             
          </div>
         <?php endif; ?>
-        <p>Nie masz konta? <a href="rejestracja.php">Utwórz konto</a></p>
+        <p>Nie masz konta? <a href="register.php">Utwórz konto</a></p>
     </div>
     
 </body>
