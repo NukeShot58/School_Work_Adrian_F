@@ -1,0 +1,16 @@
+body{
+    display: flex;
+}
+.konfigurator{
+    width: 30%;
+    padding-right: 50px;
+}
+.strona{
+    padding: 30px;
+}
+.wrapper{
+    display: flex;
+}
+img{
+    padding: 10px;
+}

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <section class="konfigurator">
+        <h3>Konfigurator stylu</h3>
+        <p>Podaj kolor tła</p>
+        <button>Indigo</button>
+        <button>SteelBlue</button>
+        <button>Olive</button>
+        <p>Podaj kolor czcionki</p>
+        <select name="kolor">
+            <option value="white">White</option>
+            <option value="tan">Tan</option>
+            <option value="bisque">Bisque</option>
+            <option value="plum">Plum</option>
+        </select>
+        <p>Podaj rozmiar czcionki w procentach np. 200%</p>
+        <input type="text" name="czcionka">
+        <p>Czy rysunek ma mieć ramkę?</p>
+        <input type="checkbox" name="ramka" value="tak">Rysuj ramkę
+        <p>Jaki typ punktora listy?</p>
+        <input type="radio" name="lista" value="disc">dysk
+        <input type="radio" name="lista" value="square">kwadrat
+        <input type="radio" name="lista" value="circle">okrąg
+    </section>
+    <section class="strona">
+
+        <div class="wrapper">
+            <img src="gibraltar.jpg" alt="">
+            <ul>
+                <li>element 1</li>
+                <li>element 2</li>
+                <li>element 3</li>
+            </ul>
+        </div>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero modi repellendus adipisci fugiat nemo magnam atque veniam nobis sed consectetur, dolor architecto repellat nam dolore deserunt perspiciatis tempore eligendi. Odio.</p>
+    </section>
+    
+    <script>
+        // pobieramy elemeny prawej strony
+        const img = document.querySelector('img')
+        const ul = document.querySelector('.strona ul')
+        const akapit= document.querySelector('.strona p')
+        const strona = document.querySelector('.strona')
+
+        const przyciski = document.querySelectorAll('button');
+
+        const kolory = document.querySelector('select[name="kolor"]');
+
+        const czcionka = document.querySelector('input[name="czcionka"]');
+
+        const ramka = document.querySelector('input[name="ramka"]')
+
+        const lista = document.querySelectorAll('input[name="lista"]');
+        // buttons
+        przyciski[0].addEventListener('click', () => {
+            strona.style.backgroundColor = 'indigo';
+        });
+        przyciski[1].addEventListener('click', () => {
+            strona.style.backgroundColor = 'steelblue';
+        });
+        przyciski[2].addEventListener('click', () => {
+            strona.style.backgroundColor = 'olive';
+        });
+        ///////////////////////
+        // Font color
+        kolory.addEventListener('change', () => {
+            ul.style.color = kolory.value;
+            akapit.style.color = kolory.value;
+        });
+        ////////////////////////////////////
+        // Font size
+        czcionka.addEventListener('focusout', () => {
+            strona.style.fontSize = czcionka.value;
+        });
+        //////////////////////////////////
+        ramka.addEventListener('change', () => {
+            if(ramka.checked)
+                img.style.border = '1px solid black';   
+            else{
+                img.style.border = "";
+            }
+        })
+
+        lista.forEach((element) => {
+            element.addEventListener('click', () => {
+                ul.setAttribute('type', element.value);
+            });
+        });
+        
+
+    </script>
+</body>
+</html>
