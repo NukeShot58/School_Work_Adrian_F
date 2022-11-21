@@ -11,11 +11,11 @@
     <section class="banner"><h2>Galeria miejsc ciekawych</h2></section>
     <section class="glowny"><img src="https://placeimg.com/350/200/any" alt="galeria" ></section>
     <section class="lewy"><h3>Przeglądaj zdjęcia</h3>
-    <img src="https://placeimg.com/640/480/any" alt="lanzarotte" srcset="">
-    <img src="https://placeimg.com/640/481/any" alt="pekin" srcset="">
-    <img src="https://placeimg.com/640/482/any" alt="serengeti" srcset="">
-    <img src="https://placeimg.com/640/483/any" alt="wenecja" srcset="">
-    <img src="https://placeimg.com/640/484/any" alt="tajlandia" srcset="">
+    <img src="https://placeimg.com/350/201/any" alt="lanzarotte" srcset="">
+    <img src="https://placeimg.com/350/201/any" alt="pekin" srcset="">
+    <img src="https://placeimg.com/350/201/any" alt="serengeti" srcset="">
+    <img src="https://placeimg.com/350/201/any" alt="wenecja" srcset="">
+    <img src="https://placeimg.com/350/201/any" alt="tajlandia" srcset="">
     </section>
     <section class="prawy">
         <h3>Obrazy w naszj galerii</h3>
@@ -31,10 +31,40 @@
                 <td>1</td>
             </tr>
         </table>
-        <p>Polub nas <img src="#" alt=""></p>
+        <p>Polub nas <img src="imgs/heart.png" alt=""></p>
         <a href="https://pixabay.com/" target="_blank">Zobacz więcej zdjęć</a>
     </section>
     <section class="stopka">Autor: 00000000000</section>
+    <script>
+        const mainImg = document.querySelector('.glowny img');
+        const leftImgs = document.querySelectorAll('.lewy img');
+        // images
+        leftImgs[0].addEventListener('click', () => {
+            mainImg.setAttribute('src', leftImgs[0].getAttribute('src'))
+        })
+        leftImgs[1].addEventListener('click', () => {
+            mainImg.setAttribute('src', leftImgs[1].getAttribute('src'))
+        })
+        leftImgs[2].addEventListener('click', () => {
+            mainImg.setAttribute('src', leftImgs[2].getAttribute('src'))
+        })
+        leftImgs[3].addEventListener('click', () => {
+            mainImg.setAttribute('src', leftImgs[3].getAttribute('src'))
+        })
+        leftImgs[4].addEventListener('click', () => {
+            mainImg.setAttribute('src', leftImgs[4].getAttribute('src'))
+        })
+        ///////////////
+        // Like button
+        const lBtn = document.querySelector('.prawy img')
 
+        lBtn.addEventListener('click', () => {
+            if(lBtn.getAttribute('src') == 'imgs/heart.png'){
+                lBtn.setAttribute('src', "imgs/heart_filed.png")
+            }else{
+                lBtn.setAttribute('src', "imgs/heart.png")
+            }
+        })
+    </script>
 </body>
 </html>

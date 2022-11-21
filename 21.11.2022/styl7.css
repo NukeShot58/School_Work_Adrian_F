@@ -27,12 +27,14 @@ body{
     color: white;
     height: 300px;
     width: 80%;
+    float: left;
 }
 .prawy{
     background-color: rgb(70,130,180);
     color: white;
     height: 300px;
     width: 20%;
+    display: inline-block;
 }
 
 .glowny img{
@@ -45,4 +47,8 @@ body{
 }
 .lewy img:hover{
     border: solid 1px white;
+}
+.prawy img{
+    height: 20px;
+    width: auto;
 }
