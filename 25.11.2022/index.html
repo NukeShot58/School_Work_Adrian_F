@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        table{
+            background: honeydew;
+        }
+    </style>
+</head>
+<body>
+    <table border="1">
+        <tr>
+            <th>Produkt</th>
+            <th>Jednostka</th>
+            <th>Dostępna ilość</th>
+            <th>Aktualizacja</th>
+            <th>Zamowiene</th>
+        </tr>
+        <tr>
+            <td class="nazw">Skrętka U/UTP drut</td>
+            <td>metr</td>
+            <td class="braki">20</td>
+            <td><button onclick="aktualizuj(0)">Aktualizuj</button></td>
+            <td><button onclick="zamowiene(0)">Zamów</button></td>
+        </tr>
+        <tr>
+            <td class="nazw">Skrętka U/UTP linka</td>
+            <td>metr</td>
+            <td class="braki">2</td>
+            <td><button onclick="aktualizuj(1)">Aktualizuj</button></td>
+            <td><button onclick="zamowiene(1)">Zamów</button></td>
+        </tr>
+        <tr>
+            <td class="nazw">Wtyki 8P8C</td>
+            <td>sztuki</td>
+            <td class="braki">10</td>
+            <td><button onclick="aktualizuj(2)">Aktualizuj</button></td>
+            <td><button onclick="zamowiene(2)">Zamów</button></td>
+        </tr>
+        <tr>
+            <td class="nazw">Moduły Keystone</td>
+            <td>sztuki</td>
+            <td class="braki">30</td>
+            <td><button onclick="aktualizuj(3)">Aktualizuj</button></td>
+            <td><button onclick="zamowiene(3)">Zamów</button></td>
+        </tr>
+    </table>
+    <script>
+        let idZam = 0;
+        const nazwyProd = document.querySelectorAll('td.nazw');
+        const braki = function(){
+            const dosIl = document.querySelectorAll('td.braki');
+            dosIl.forEach(element => {
+                let wart = parseInt(element.textContent);
+                if(wart == 0){
+                    element.style.backgroundColor = 'red';
+                }else if(wart > 0 && wart < 6){
+                    element.style.backgroundColor = 'yellow';
+                }else{
+                    element.style.backgroundColor = 'honeydew';
+                }
+            }); 
+        }
+
+        const aktualizuj = function(numer){
+            const dosIl = document.querySelectorAll('td.braki');
+            dosIl[numer].textContent = prompt('Podaj nową ilośc:');
+            braki();
+        }
+
+        const zamowiene = function(num){
+            idZam++;
+            alert(`Zamowienie: ${idZam}. Produkt: ${nazwyProd[num].textContent}`)
+        }
+
+
+        braki();
+    </script>
+</body>
+</html>
